@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <style type="text/css">
+    body{background-image: url("../Desktop/Desktop/TV.jpg");
+    background-size: cover;
+        /* Other optional background properties */
+        background-repeat: no-repeat;
+        background-position:center;
+      }
+h1{ text-size: 200px}
+    ul {
+      list-style-type:circle;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <input type="text" id="taskInput" placeholder="Enter a task">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList">
+  </ul>
+
+  <script>
+    function addTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskList = document.getElementById("taskList");
+      
+      // Create a new list item with task description
+      var listItem = document.createElement("li");
+      var taskText = document.createTextNode(taskInput.value);
+      listItem.appendChild(taskText);
+      
+      // Append the new list item to the task list
+      taskList.appendChild(listItem);
+      
+      // Clear the task input field
+      taskInput.value = "";
+    }
+  </script>
+</body>
+</html>
